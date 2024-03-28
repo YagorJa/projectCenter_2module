@@ -6,6 +6,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 @Entity
+@Table(name = "AppUser")
 @Data
 public class User {
     @Id
@@ -34,6 +35,10 @@ public class User {
         this.localDate = localDate;
         this.status = status;
         this.laveAway = laveAway;
+    }
+
+    public User() {
+
     }
 }
 
