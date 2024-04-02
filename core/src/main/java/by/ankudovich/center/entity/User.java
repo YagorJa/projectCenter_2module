@@ -2,15 +2,20 @@ package by.ankudovich.center.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 @Entity
-@Table(name = "AppUser")
+@Table(name = "appuser")
 @Data
+@Inheritance(strategy = InheritanceType.JOINED)
+@NoArgsConstructor
+
 public class User {
     @Id
-    private long id;
+    @GeneratedValue
+    private Long id;
     private  String name;
     private String surname;
     private  int age;
@@ -37,8 +42,5 @@ public class User {
         this.laveAway = laveAway;
     }
 
-    public User() {
-
-    }
 }
 
