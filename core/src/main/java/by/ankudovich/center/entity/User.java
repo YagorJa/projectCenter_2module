@@ -1,46 +1,21 @@
 package by.ankudovich.center.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
-@Entity
-@Table(name = "appuser")
-@Data
-@Inheritance(strategy = InheritanceType.JOINED)
-@NoArgsConstructor
 
+@Data
+@Entity
+@Table(schema = "sportcenter", name = "user")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
     @Id
-    @GeneratedValue
-    private Long id;
-    private  String name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String name;
     private String surname;
-    private  int age;
-    @Column(name = "phone_number")
-    private  String phoneNumber;
-    @Column(name = "local_date")
-    private LocalDate localDate;
-    @Enumerated(EnumType.STRING)
-    private  UserStatus status;
-    @Column(name = "lave_Away")
-    private BigDecimal laveAway;
-
-    public User(long id, String name, String surname,
-                int age, String phoneNumber,
-                LocalDate localDate, UserStatus status,
-                BigDecimal laveAway) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.phoneNumber = phoneNumber;
-        this.localDate = localDate;
-        this.status = status;
-        this.laveAway = laveAway;
-    }
-
+    private LocalDate birthday;
+    private String address;
 }
 

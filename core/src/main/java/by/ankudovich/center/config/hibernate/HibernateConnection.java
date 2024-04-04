@@ -10,8 +10,9 @@ public class HibernateConnection {
 
 
     public static EntityManager getEntityManager() {
-
-
         return emf.createEntityManager();
+    }
+    public static void closeEntityManagerFactory() {
+        emf.close();
     }
 }

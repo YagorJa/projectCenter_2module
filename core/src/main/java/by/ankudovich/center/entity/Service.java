@@ -1,32 +1,18 @@
 package by.ankudovich.center.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "services")
 @Data
+@Entity
+@Table(schema = "sportcenter", name = "service")
 public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "cost")
+    private long id;
+    @Column(name = "service_name")
+    private String serviceName;
     private BigDecimal cost;
-
-    public Service(Long id, String name, BigDecimal cost) {
-        this.id = id;
-        this.name = name;
-        this.cost = cost;
-    }
-
-    public Service() {
-    }
-
-
 }

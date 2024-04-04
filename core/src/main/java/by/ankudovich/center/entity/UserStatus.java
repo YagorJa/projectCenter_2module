@@ -3,6 +3,7 @@ package by.ankudovich.center.entity;
 public enum UserStatus {
     ACTIVE,
     UNACTIVE,
-    PASSIV
-
+    PASSIV,
+    BLOCKED,
+    PREMIUM
 }

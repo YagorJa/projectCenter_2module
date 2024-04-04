@@ -1,43 +1,29 @@
 package by.ankudovich.center.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "rooms")
 @Data
+@Entity
+@Table(schema = "sportcenter", name = "room")
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "number")
-    private String number;
-
-    @Column(name = "capacity")
-    private Integer capacity;
-
+    private long id;
+    @Column(name = "room_name")
+    private String roomName;
+    @Column(name = "identification_number")
+    private String identificationNumber;
+    @Column(name = "max_capacity")
+    private int maxCapacity;
     @Column(name = "status")
     private String status;
-
-    @Column(name = "cost_per_hour")
-    private BigDecimal costPerHour;
-
-    public Room(Long id, String name, String number, Integer capacity, String status, BigDecimal costPerHour) {
-        this.id = id;
-        this.name = name;
-        this.number = number;
-        this.capacity = capacity;
-        this.status = status;
-        this.costPerHour = costPerHour;
-    }
-
-    public Room() {
-    }
+    @Column(name = "hourly_rate")
+    private BigDecimal hourlyRate;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "service_id")
+    private Service service;
 }
 

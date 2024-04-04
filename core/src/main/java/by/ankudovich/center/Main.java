@@ -26,18 +26,8 @@ public class Main {
             user.setSurname("Пряноок");
 
         userRepository.add(user);
-//        UserService userService = new UserService();
-      ////  User user = new User();
-//        SessionFactory sessionFactory = HibernateJavaConfig.getSessionFactory();
-//        Session session = sessionFactory.openSession();
-//        session.beginTransaction();
-//
-//        // Поиск клиента по id
-//        Long clientId = 1L; // замените на id клиента, которого вы ищете
-//        User user = session.get(User.class, clientId);
-//
-//        session.getTransaction().commit();
-//        session.close();
+
+
 
     }
         public static void add(UserRepository userRepository) {
