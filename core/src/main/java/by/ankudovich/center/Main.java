@@ -2,45 +2,26 @@ package by.ankudovich.center;
 
 
 import by.ankudovich.center.config.hibernate.HibernateConfiguration;
-import by.ankudovich.center.entity.Customer;
-import by.ankudovich.center.entity.Employee;
 import by.ankudovich.center.entity.User;
-import by.ankudovich.center.entity.UserStatus;
 
-import by.ankudovich.center.service.CustomerService;
-import by.ankudovich.center.service.EmployeeService;
-import by.ankudovich.center.service.UserService;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import by.ankudovich.center.service.UserServiceI;
+
+import by.ankudovich.center.service.interfaces.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 @Configuration
 @ComponentScan("by.ankudovich.center")
 
 public class Main {
     public static void main(String[] args) {
-//        UserService userService = new UserService();
-//        CustomerService customerService = new CustomerService();
-//        EmployeeService employeeService = new EmployeeService();
-//
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//
-//        User user = new User();
-//        String date = "16/08/1995";
-//        LocalDate localDate = LocalDate.parse(date, formatter);
-//        user.setName("Erema");
-//        user.setSurname("Zhopov");
-//        user.setAddress("Lesnoy");
-//        user.setBirthday(localDate);
-//        userService.add(user);
+
 //
 //        Customer customer = new Customer();
 //        String date1 = "23/09/2010";
@@ -54,25 +35,12 @@ public class Main {
 //        customer.setSpentAmount(spentAmount);
 //        customer.setStatus(UserStatus.ACTIVE);
 //        customerService.add(customer);
-//
-//        Employee employee = new Employee();
-//        String date3 = "16/12/2003";
-//        String date4 = "06/10/2005";
-//        LocalDate localDate3 = LocalDate.parse(date3, formatter);
-//        LocalDate localDate4 = LocalDate.parse(date4, formatter);
-//        employee.setFirstWorkDay(localDate3);
-//        employee.setDismissal(localDate4);
-//        employee.setPosition("builder");
-//        String spentAmountStr1 = "1100.70";
-//        BigDecimal spentAmount1 = new BigDecimal(spentAmountStr1);
-//        employee.setSalary(spentAmount1);
-//        employeeService.add(employee);
 
         ApplicationContext ctx = new AnnotationConfigApplicationContext
                 (Main.class);
-        UserService userService1 = ctx.getBean("userService", UserService.class);
-        List<User> customers = userService1.allUsers();
-        customers.forEach(System.out::println);
+        UserServiceI userService1 = ctx.getBean("userServiceI", UserServiceI.class);
+        List<User> users = userService1.allUsers();
+        users.forEach(System.out::println);
 //        CategoryService categoryService = ctx.getBean("categoryService", CategoryService.class);
 //        BrandService brandService = ctx.getBean("brandService", BrandService.class);
 

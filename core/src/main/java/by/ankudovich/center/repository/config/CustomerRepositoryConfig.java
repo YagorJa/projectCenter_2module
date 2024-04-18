@@ -16,7 +16,7 @@ import java.util.Optional;
 import java.util.function.Function;
 
 public class CustomerRepositoryConfig implements CustomerRepository {
-    @Override
+
     public void add(Customer customer) {
         SessionFactory sessionFactory = HibernateJavaConfig.getSessionFactory();
         try (Session session = sessionFactory.openSession()) {

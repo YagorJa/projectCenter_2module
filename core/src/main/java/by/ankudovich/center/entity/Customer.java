@@ -1,5 +1,6 @@
 package by.ankudovich.center.entity;
 
+import by.ankudovich.center.enums.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

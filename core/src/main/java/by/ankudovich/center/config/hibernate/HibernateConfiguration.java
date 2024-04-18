@@ -50,7 +50,6 @@ public class HibernateConfiguration {
     private boolean formatSql;
     @Value("${hibernate.hbm2ddl.auto}")
     private String hbm2ddl;
-
     @Bean
     public DataSource dataSource() {
         HikariConfig hikariConfig = new HikariConfig();

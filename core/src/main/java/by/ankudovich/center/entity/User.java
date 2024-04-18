@@ -1,5 +1,6 @@
 package by.ankudovich.center.entity;
 
+import by.ankudovich.center.enums.UserStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,5 +18,6 @@ public class User {
     private String surname;
     private LocalDate birthday;
     private String address;
+    private UserStatus status;
 }
 
