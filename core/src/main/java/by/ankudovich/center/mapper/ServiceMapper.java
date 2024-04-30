@@ -1,9 +1,9 @@
 package by.ankudovich.center.mapper;
 
-import by.tms.sportcenter.api.service.ServiceCreateRequest;
-import by.tms.sportcenter.api.service.ServiceResponse;
-import by.tms.sportcenter.api.service.ServiceUpdateRequest;
-import by.tms.sportcenter.entity.Service;
+import by.ankudovich.center.api.service.ServiceCreateRequest;
+import by.ankudovich.center.api.service.ServiceResponse;
+import by.ankudovich.center.api.service.ServiceUpdateRequest;
+import by.ankudovich.center.entity.Service;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

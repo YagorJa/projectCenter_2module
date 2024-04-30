@@ -1,7 +1,5 @@
 package by.ankudovich.center.entity;
 
-
-import by.ankudovich.center.enums.UserStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
@@ -12,20 +10,18 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Table(schema = "sportcenter", name = "customers")
 @NoArgsConstructor
+@Table(schema = "sportcenter", name = "workers")
 @PrimaryKeyJoinColumn(name = "customer_worker_id")
-public class Customer extends User{
-    @Column(name = "last_visit")
-    private LocalDate lastVisit;
-    @Column(name = "phone_number")
-    private String phoneNumber;
-    private UserStatus status;
-    private BigDecimal summ;
-    @Column(name = "first_visit")
-    private LocalDate firstVisit;
+public class Worker extends User{
+    @Column(name = "first_work_day")
+    private LocalDate firstWorkDay;
+    private LocalDate dismissal;
+    private String position;
+    private BigDecimal salary;
+
+
 }

@@ -1,9 +1,7 @@
 package by.ankudovich.center.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
-
-import java.math.BigDecimal;
+import lombok.Data;
 
 @Data
 @Entity
@@ -11,8 +9,8 @@ import java.math.BigDecimal;
 public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(name = "service_name")
-    private String serviceName;
-    private BigDecimal cost;
+    private Long id;
+    private String name;
+    private int cost;
+
 }
